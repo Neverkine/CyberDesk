@@ -1,0 +1,17 @@
+{
+  "name": "CyberDesk — Duolingo по кибербезопасности",
+  "short_name": "CyberDesk",
+  "description": "Мобильное приложение для обучения цифровой безопасности и противодействию мошенникам",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F9FA",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
