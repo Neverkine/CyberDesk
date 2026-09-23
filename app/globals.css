@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lack';
+  src: url('/fonts/lack/lack-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+
+@font-face {
+  font-family: 'Lack';
+  src: url('/fonts/lack/lack-regular.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+
+@font-face {
+  font-family: 'Lack';
+  src: url('/fonts/lack/lack-italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+
+@font-face {
+  font-family: 'Lack';
+  src: url('/fonts/lack/lack-italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-002F, U+003A-10FFFF;
+}
+
+:root {
+  --color-canvas: #F8F9FA;
+  --color-surface: #FFFFFF;
+  --color-text: #2D3748;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  color: #2D3748;
+  background-color: #ECEEF2;
+  font-family: 'Lack', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html.dark, html.dark body {
+  background-color: #131F24;
+  color: #F1F5F9;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 2.4s ease-in-out infinite;
+}
+
+/* Safe area support for iOS and Android */
+.safe-top {
+  padding-top: max(env(safe-area-inset-top), 0.5rem);
+}
+
+.safe-bottom {
+  padding-bottom: max(env(safe-area-inset-bottom), 4.5rem);
+}
+
+/* Custom soft scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #EAECEF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E0;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #263842;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334B58;
+}
+
+.font-numbers,
+.tabular-nums {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
